@@ -1,6 +1,7 @@
 # cjbohlman.github.io
 
 ## TODO:
- - [ ] Add developer-related content
- - [ ] Edit resume
- - [x] Use Jekyll to build site
+- [x] Use Jekyll to build site
+- [ ] Add portfolio items
+- [ ] Edit resume
+
