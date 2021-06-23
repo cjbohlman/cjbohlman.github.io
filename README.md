@@ -2,6 +2,6 @@
 
 ## TODO:
 - [x] Use Jekyll to build site
-- [ ] Add portfolio items
-- [ ] Edit resume
+- [x] Add portfolio items
+- [x] Edit resume
 
