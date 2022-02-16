@@ -2,6 +2,8 @@
 permalink: /portfolio/
 ---
 
+# Portfolio
+
 ## Smogon Scraper
 
 [Project](https://github.com/cjbohlman/smogon_scraper)
