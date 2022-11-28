@@ -1,0 +1,11 @@
+---
+const {name, ref, icon} = Astro.props
+const pathname = Astro.url.pathname.substring(1);
+---
+<li class="mx-2 my-1">
+  <a class={`${pathname.toLowerCase() !== ref.toLowerCase() ? "opacity-50 flex flex-col items-center" : "flex flex-col items-center"}`} href={`/${ref}`}>
+    <Fragment set:html={icon} />
+    <span class="font-semibold">{name}</span>
+  </a>
+</li>
+

@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Portfolio">
+	<main class="m-auto max-w-xl p-6">
+		<h1>My Stuff</h1>
+    <ul role="list" class="link-card-grid">
+      <Card
+          href=""
+          title="Eisenhower Matrix"
+          body="made the website."
+        />
+      <Card
+        href=""
+        title="Smogon Scraper"
+        body="wrote the code"
+      />
+      <Card
+        href=""
+        title="Personal Website"
+        body="made this shit"
+      />
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+</style>
