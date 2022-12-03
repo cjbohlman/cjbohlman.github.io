@@ -1,18 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import BlogPost from '../components/BlogPost.astro';
+import LinkCard from '../components/LinkCard.astro';
 const allPosts = await Astro.glob('../pages/posts/*.md');
-const pageTitle = "My Astro Learning Blog";
 ---
 
 <Layout title="Blog">
 	<main class="m-auto max-w-xl p-6">
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
-
-    <p>This is where I will post about my journey learning Astro.</p>
     <ul>
-      {allPosts.map((post) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+      {allPosts.map((post) => <LinkCard title={post.frontmatter.title} body={post.frontmatter.description} link={post.url} />)}
     </ul>
 
 	</main>
