@@ -4,17 +4,16 @@ export interface Props {
   subtitle?: string;
 	body: string;
   body2?: string;
-  isLink: boolean;
-	link?: string;
+	link: string;
 }
 
 
-const { isLink, link, title, subtitle, body, body2 } = Astro.props;
+const { link, title, subtitle, body, body2 } = Astro.props;
 ---
 
 <li class="link-card">
-  <div>
-    <h2 class="block text-xl m-0">
+	<a href={link}>
+		<h2 class="block text-xl m-0">
 			{title}
 		</h2>
     <h3 class="block uppercase text-lg mt-1.5">
@@ -26,7 +25,7 @@ const { isLink, link, title, subtitle, body, body2 } = Astro.props;
     <p class="mt-1 mb-0">
 			{body2}
 		</p>
-  </div>
+  </a>
 </li>
 <style>
 	.link-card {
@@ -40,7 +39,7 @@ const { isLink, link, title, subtitle, body, body2 } = Astro.props;
     color: #F5F3F5;
 	}
 
-	.link-card > div {
+	.link-card > a {
 		width: 100%;
 		text-decoration: none;
 		line-height: 1.4;
