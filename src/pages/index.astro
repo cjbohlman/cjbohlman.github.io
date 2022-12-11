@@ -4,17 +4,31 @@ import Card from '../components/Card.astro';
 ---
 
 <Layout title="cjbohlman">
-	<main class="m-auto max-w-xl p-6">
-		<h1 class="text-lg font-bold">Hello world, my name is Christopher Bohlman!</h1>
+	<main class="">
+    <section id="heading" class="min-h-screen m-auto max-w-3xl p-6 mt-28" >
+      <h1 class="text-3xl font-bold">Hola mundo, my name is
+        <span class="text-ghost-white text-6xl block mt-5">Christopher Bohlman</span></h1>
+      <h2 class="text-ghost-white/75 text-4xl block">Software Engineer, Pacific Northwest</h2>
+      <p class="text-ghost-white/75 mt-20">I'm a <span class="font-bold text-copper-crayola">software engineer</span> who is currently focusing on full-stack development.</p>
+      <p class="text-ghost-white/75 mt-1">I am currently working at <span class="font-bold text-copper-crayola">Schoolhouse Electric</span>.</p>
+      <p class="text-ghost-white/75 mt-1">I graduated from the <span class="font-bold text-copper-crayola">University of Arizona</span> with a <span class="font-bold text-copper-crayola">BSc in Computer Science</span>.</p>
+    </section>
 
-    <p>I am currently working as a software developer at <span class="font-bold">Schoolhouse Electric</span>.</p>
+    <section id="experience" class="min-h-screen m-auto max-w-3xl p-6 mt-28">
+      <h2 class="text-3xl">Experience</h2>
+    </section>
 
-    <p>I graduated from the <span class="font-bold">University of Arizona</span> with a <span class="font-bold">BSc in Computer Science</span>.</p>
+    <section id="projects" class="min-h-screen m-auto max-w-3xl p-6 mt-28">
+      <h2 class="text-3xl">Projects</h2>
+    </section>
 
-    <p>Even after college, I am still looking to learn more about programming!</p>
+    <section id="about" class="min-h-screen m-auto max-w-3xl p-6 mt-28">
+      <h2 class="text-3xl">About Me</h2>
+    </section>
 
-    <p>I write here about whatever programming topics tickle my fancy.</p>
+    <section id="contact" class="m-auto max-w-3xl p-6 mt-28">
+      <a class="text-3xl" href="mailto:cbohlman_inquiries@protonmail.com">Want to get in touch with me?</a>
+    </section>
 
-    <p>Please look through my blog, portfolio, or GitHub profile to check out what I have been working on.</p>
-	</main>
+  </main>
 </Layout>
