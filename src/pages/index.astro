@@ -1,11 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Portfolio from '../components/Portfolio.astro';
+import Resume from '../components/Resume.astro';
+import About from '../components/About.astro';
 ---
 
 <Layout title="cjbohlman">
 	<main class="">
-    <section id="heading" class="min-h-screen m-auto max-w-3xl p-6 mt-28" >
+    <section id="heading" class="min-h-screen m-auto max-w-3xl p-6 mt-20 md:my-auto" >
       <h1 class="text-3xl font-bold">Hola mundo, my name is
         <span class="text-ghost-white text-6xl block mt-5">Christopher Bohlman</span></h1>
       <h2 class="text-ghost-white/75 text-4xl block">Software Engineer, Pacific Northwest</h2>
@@ -16,19 +18,31 @@ import Card from '../components/Card.astro';
 
     <section id="experience" class="min-h-screen m-auto max-w-3xl p-6 mt-28">
       <h2 class="text-3xl">Experience</h2>
+      <Resume />
     </section>
 
-    <section id="projects" class="min-h-screen m-auto max-w-3xl p-6 mt-28">
+    <section id="projects" class="min-h-screen m-auto max-w-3xl p-6">
       <h2 class="text-3xl">Projects</h2>
+      <Portfolio />
     </section>
 
-    <section id="about" class="min-h-screen m-auto max-w-3xl p-6 mt-28">
+    <section id="about" class="min-h-screen m-auto max-w-3xl p-6">
       <h2 class="text-3xl">About Me</h2>
+      <About />
     </section>
 
-    <section id="contact" class="m-auto max-w-3xl p-6 mt-28">
+    <section id="contact" class="m-auto max-w-3xl p-6 mb-20">
       <a class="text-3xl" href="mailto:cbohlman_inquiries@protonmail.com">Want to get in touch with me?</a>
     </section>
 
   </main>
 </Layout>
+
+<style>
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 1rem;
+    padding: 0;
+  }
+</style>

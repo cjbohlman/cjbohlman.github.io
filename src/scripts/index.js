@@ -3,9 +3,9 @@ window.addEventListener('DOMContentLoaded', event => {
   document.addEventListener('scroll', (e) => {
     console.log(window.scrollY)
     if (window.scrollY !== 0) {
-      document.querySelector('nav').classList.add('shadow')
+      document.querySelector('header').classList.add('shadow-lg', 'shadow-black')
     } else {
-      document.querySelector('nav').classList.remove('shadow')
+      document.querySelector('header').classList.remove('shadow-lg', 'shadow-black')
     }
   })
 })
