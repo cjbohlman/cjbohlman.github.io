@@ -34,7 +34,7 @@ const navItems = [
     <span class="text-lg font-bold ml-0 sm:ml-5 mb-1 sm:mr-2 sm:mb-0 p-2 border rounded-md border-solid border-copper-crayola hover:bg-copper-crayola/25 transition duration-300 ease-in-out">CB</span>
   </a>
 
-  <div class="w-screen overflow-x-scroll overflow-y-hidden">
+  <div class="w-screen overflow-x-auto overflow-y-hidden">
     <ul class="w-min mx-auto sm:mx-0 my-2 flex whitespace-nowrap sm:mt-0">
       {navItems.map((data) => <NavigationItem name={data.name} ref={data.ref} type={data.type}/>)}
     </ul>
