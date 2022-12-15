@@ -5,6 +5,7 @@ export interface Props {
 
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 
 const { title } = Astro.props;
 ---
@@ -29,20 +30,3 @@ const { title } = Astro.props;
     </script>
 	</body>
 </html>
-<style is:global>
-  @font-face {
-    font-family: 'Hubot Sans';
-    src:
-      url('Hubot-Sans.woff2') format('woff2 supports variations'),
-      url('Hubot-Sans.woff2') format('woff2-variations');
-    font-weight: 200 900;
-    font-stretch: 75% 125%;
-  }
-	html {
-    font-family: 'Hubot Sans';
-	}
-	code {
-		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-			Bitstream Vera Sans Mono, Courier New, monospace;
-	}
-</style>
