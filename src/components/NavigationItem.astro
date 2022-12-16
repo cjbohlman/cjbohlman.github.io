@@ -1,12 +1,10 @@
 ---
-const {name, ref, icon} = Astro.props
+const {name, ref, type} = Astro.props
 const pathname = Astro.url.pathname.substring(1);
-
-const aBaseClasses = "flex flex-col items-center";
 ---
 <li class="mx-2 my-1">
-  <a class={`${pathname.toLowerCase() !== ref.toLowerCase() ? "opacity-50 hover:opacity-80 transition duration-300 ease-in-out " + aBaseClasses : aBaseClasses}`} href={`/${ref}`}>
-    <span class="">{name}</span>
+  <a class={`${type === "link"  ? "text-ghost-white hover:text-copper-crayola transition duration-300 ease-in-out underline decoration-2 underline-offset-8 decoration-1 decoration-solid decoration-copper-crayola" : "no-underline p-1 flex justify-center items-center text-copper-crayola border rounded-md border-solid border-copper-crayola hover:bg-copper-crayola/25 transition duration-300 ease-in-out"}`} href={ref}>
+    <span class="text-sm">{name}</span>
   </a>
 </li>
 

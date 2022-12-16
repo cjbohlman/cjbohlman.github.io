@@ -2,34 +2,43 @@
 import NavigationItem from "./NavigationItem.astro";
 
 const navItems = [
-  {
-    "name": "Home",
-    "ref": "",
+{
+    "name": "Experience",
+    "ref": "/#experience",
+    "type":"link",
   },
   {
-    "name": "Portfolio",
-    "ref": "portfolio",
-  },
-  {
-    "name": "Resume",
-    "ref": "resume",
-  },
-  {
-    "name": "Blog",
-    "ref": "blog",
+    "name": "Projects",
+    "ref": "/#projects",
+    "type":"link",
   },
   {
     "name": "About",
-    "ref": "about",
+    "ref": "/#about",
+    "type":"link",
+  },
+  {
+    "name": "Blog",
+    "ref": "/blog",
+    "type":"link",
+  },
+  {
+    "name": "Resume",
+    "ref": "/christopher-bohlman-resume.pdf",
+    "type": "button",
   },
 ];
 ---
-<nav class="flex flex-col sm:flex-row items-center sm:justify-start text-white py-3" style="    background-color: #181F31; box-shadow: 0px 5px 8px 0px #000000;">
-  <span class="text-lg font-bold ml-0 sm:ml-5 mb-1 sm:mr-2 sm:mb-0 p-2" style="border: 1px solid white; border-radius: 10%;">CB</span>
+<nav class="flex flex-col sm:flex-row items-center sm:justify-start">
+  <a href="/">
+    <span class="text-lg font-bold ml-0 sm:ml-5 mb-1 sm:mr-2 sm:mb-0 p-2 border rounded-md border-solid border-copper-crayola hover:bg-copper-crayola/25 transition duration-300 ease-in-out">CB</span>
+  </a>
 
-  <ul class="flex sm:mr-5">
-    {navItems.map((data) => <NavigationItem name={data.name} ref={data.ref}/>)}
-  </ul>
+  <div class="w-screen overflow-x-auto overflow-y-hidden">
+    <ul class="w-min mx-auto sm:mx-0 my-2 flex whitespace-nowrap sm:mt-0">
+      {navItems.map((data) => <NavigationItem name={data.name} ref={data.ref} type={data.type}/>)}
+    </ul>
+  </div>
 
 </nav>
 

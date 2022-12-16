@@ -20,28 +20,32 @@ This guide assumes basic knowledge about multi-threading concepts (mutexes, sema
 To be able to follow this guide, you must be using an implementation of the C standard that has adopted the usage of threads.h.
 
 To check if your compiler supports this, the macro `__STDC_NO_THREADS__` was added for checking.
-```
+
+```c
 #ifdef __STDC_NO_THREADS__
 #error This compiler does not support threads.h.
 #endif
 ```
 
 ## Units of Multi-threading: A Primer
+
 Semaphores are used for allowing a certain amount of threads to gain access to a resource at once. They differ from mutexes as semaphores can signal to other processes that they can attempt to access a critical section, whereas a mutex has to be unlocked by the same process/thread that locked it.
 
 threads.h includes 2 locking mechanisms that can be used in tandem: mutexes and condition variables. The mutex is a binary semaphore, flipping between 1 and 0 to determine whether a thread can or can't access the section the mutex is guarding. The condition variables are used to tell threads to go to sleep when a certain event occurs, and to wake up when another event happens. And with just these 2 components, we can create a semaphore.
 
 ## Implementation
+
 Our semaphore itself will have 3 variables.
+
 1. A counter, containing how many more threads are able to access the resource the semaphore is guarding
 2. A mutex, guarding access to the counter
 3. A conditional variable, used for the signaling of other threads that are using the semaphore.
 
-```
+```c
 typedef struct semaphore {
-	mtx_t mtx;
-	cnd_t cv;
-	int count;
+  mtx_t mtx;
+  cnd_t cv;
+  int count;
 } sem_t;
 ```
 
@@ -54,17 +58,17 @@ The semaphore functions we will implement mirror the POSIX semaphore functions w
 
 `sem_init` initializes the mutex and the conditional variable, as well as sets the counter to whatever is passed in the parameter.
 
-```
+```c
 int sem_init(sem_t *sem, unsigned int value) {
-	if (sem == NULL) {
-		return -1;
-	}
+  if (sem == NULL) {
+    return -1;
+  }
 
-	mtx_init(&sem->mtx, mtx_plain);
-	cnd_init(&sem->cv);
-	sem->count = value;
+  mtx_init(&sem->mtx, mtx_plain);
+  cnd_init(&sem->cv);
+  sem->count = value;
 
-	return 0;
+  return 0;
 }
 ```
 
@@ -72,59 +76,61 @@ int sem_init(sem_t *sem, unsigned int value) {
 
 Once the thread wakes up and the counter is above zero, the thread will decrement the counter. It will unlock the mutex for the counter, and then return.
 
-```
+```c
 int sem_wait(sem_t *sem) {
-	if (sem == NULL) {
-		return -1;
-	}
+  if (sem == NULL) {
+    return -1;
+  }
 
-	mtx_lock(&sem->mtx);
-	while (sem->count == 0) {
-		cnd_wait(&sem->cv, &sem->mtx);
-	}
+  mtx_lock(&sem->mtx);
+  while (sem->count == 0) {
+    cnd_wait(&sem->cv, &sem->mtx);
+  }
 
-	sem->count--;
+  sem->count--;
 
-	mtx_unlock(&sem->mtx);
-	return 0;
+  mtx_unlock(&sem->mtx);
+  return 0;
 }
 ```
 
 `sem_post` does the opposite of `sem_wait`, locking the mutex and incrementing the counter. The conditional variable is then signaled, allowing another thread a chance at gaining access to the semaphore. The mutex is then unlocked and the function returns.
 
-```
+```c
 int sem_post(sem_t *sem) {
-	if (sem == NULL) {
-		return -1;
-	}
+  if (sem == NULL) {
+    return -1;
+  }
 
-	mtx_lock(&sem->mtx);
+  mtx_lock(&sem->mtx);
 
-	sem->count++;
+  sem->count++;
 
-	cnd_signal(&sem->cv);
-	mtx_unlock(&sem->mtx);
-	return 0;
+  cnd_signal(&sem->cv);
+  mtx_unlock(&sem->mtx);
+  return 0;
 }
 ```
 
 `sem_destroy` frees the mutex and the conditional variable such that no memory leaks will occur.
-```
-int sem_destroy(sem_t *sem) {
-	if (sem == NULL) {
-        return -1;
-    }
 
-    mtx_destroy(&sem->mtx);
-    cnd_destroy(&sem->cv);
-    return 0;
+```c
+int sem_destroy(sem_t *sem) {
+  if (sem == NULL) {
+    return -1;
+  }
+
+  mtx_destroy(&sem->mtx);
+  cnd_destroy(&sem->cv);
+  return 0;
 }
 ```
 
 ## Application
+
 This sample code will attempt to give only VALUE_COUNT_MAX threads access to the critical section through the semaphore.
 
-```
+```c
 #include <stdio.h>
 #include <unistd.h>
 #include "semaphore.h"
@@ -159,12 +165,12 @@ int main(void)
 
     int i;
     for (i = 0; i < THREAD_COUNT; i++) {
-    	thrd_create(&t[i], run, NULL);
+      thrd_create(&t[i], run, NULL);
     }
 
     int res;
     for (i = 0; i < THREAD_COUNT; i++) {
-    	thrd_join(t[i], &res);
+      thrd_join(t[i], &res);
     }
 
     sem_destroy(&sem);
@@ -172,9 +178,11 @@ int main(void)
 ```
 
 ## Conclusion
+
 This has been a very brief guide on implementing basic semaphores in C11. POSIX semaphores have many other options that can be mirrored with the threads.h library. Any suggestions are appreciated, thank you for your time!
 
 ## Sources
+
 [Beej's C Programming guide](https://beej.us/guide/bgc/html/split/multithreading.html) was very helpful for explaining the capabilities of the threads.h library.
 
 [This GitHub repository](https://github.com/VladimirMarkelov/semaphore_c11) was helpful for verifying my implementation.
