@@ -1,22 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Landing from '../components/Landing.astro';
 import Portfolio from '../components/Portfolio.astro';
 import Resume from '../components/Resume.astro';
 import About from '../components/About.astro';
 ---
 
-<Layout title="cjbohlman">
+<Layout title="Chris Bohlman: Software Engineer">
 	<main class="">
-    <section id="heading" class="m-auto max-w-3xl p-6 mt-20 md:mt-25 md:my-auto" >
-      <h1 class="text-xl md:text-3xl font-bold">Hola mundo, my name is
-        <span class="text-ghost-white text-4xl md:text-6xl block mt-0 md:mt-5">Christopher Bohlman</span></h1>
-      <h2 class="text-ghost-white/75 text-2xl md:text-4xl block">Software Engineer, Pacific Northwest</h2>
-      <p class="text-ghost-white/75 mt-20">I'm a <span class="font-bold text-copper-crayola">software engineer</span> who is currently focusing on full-stack development.</p>
-      <p class="text-ghost-white/75 mt-1">I am currently working at <span class="font-bold text-copper-crayola">Schoolhouse Electric</span>.</p>
-      <p class="text-ghost-white/75 mt-1">I graduated from the <span class="font-bold text-copper-crayola">University of Arizona</span> with a <span class="font-bold text-copper-crayola">BSc in Computer Science</span>.</p>
+    <section id="heading" class="m-auto h-70v max-w-3xl p-6 my-12" >
+      <Landing />
     </section>
 
-    <section id="experience" class="m-auto max-w-3xl p-6 pt-28 md:pt-20">
+    <section id="experience" class="m-auto max-w-3xl p-6">
       <h2 class="text-3xl mb-5">Experience</h2>
       <Resume />
     </section>
