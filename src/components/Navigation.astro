@@ -5,28 +5,24 @@ const navItems = [
 {
     "name": "Experience",
     "ref": "/#experience",
-    "type":"link",
   },
   {
     "name": "Projects",
     "ref": "/#projects",
-    "type":"link",
   },
   {
     "name": "About",
     "ref": "/#about",
-    "type":"link",
   },
   {
     "name": "Blog",
     "ref": "/blog",
-    "type":"link",
   }
 ];
 ---
-<nav class="flex flex-row items-center">
-  <a href="/" class="opacity-80 hover:opacity-100 ease-in-out duration-300">
-    <svg class="ml-4" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<nav class="flex flex-row justify-between px-3 md:pr-6 pt-2 pb-4 max-w-3xl mx-auto">
+  <a href="/" class="opacity-80 hover:opacity-100 hover:scale-110 ease-in-out duration-300 relative">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
@@ -35,13 +31,10 @@ const navItems = [
       />
     </svg>
   </a>
-  
 
-  <div class="w-screen overflow-x-auto overflow-y-hidden">
-    <ul class="w-min mx-auto sm:mx-0 mb-2 flex whitespace-nowrap sm:mt-0">
-      {navItems.map((data) => <NavigationItem name={data.name} ref={data.ref} type={data.type}/>)}
-    </ul>
-  </div>
+  <ul class="flex">
+    {navItems.map((data) => <NavigationItem name={data.name} ref={data.ref}/>)}
+  </ul>
 
 </nav>
 
