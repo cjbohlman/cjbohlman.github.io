@@ -1,15 +1,25 @@
 module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-    colors: {
-      'copper-crayola': '#DE8F6E',
-      'white': '#ffffff',
-      'oxford-blue': '#0B0C2F',
-      'steel-teal': '#607B7D',
-      'ghost-white': '#F7F7FF'
+		fontFamily: {
+      'sans': ['Bahnschrift', 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', 'sans-serif-condensed', 'sans-serif'],
+      'serif': ['Charter', 'Bitstream Charter', 'Sitka Text', 'Cambria', 'serif'],
+      'mono': ['ui-monospace', 'Cascadia Code', 'Source Code Pro', 'Menlo', 'Consolas', 'DejaVu Sans Mono', 'monospace'],
     },
-		extend: {
-    },
+    extend: {
+      height: {
+				"10v": "10vh",
+				"20v": "20vh",
+				"30v": "30vh",
+				"40v": "40vh",
+				"50v": "50vh",
+				"60v": "60vh",
+				"70v": "70vh",
+				"80v": "80vh",
+				"90v": "90vh",
+				"100v": "100vh",
+			}
+    }
 	},
 	plugins: [],
 };

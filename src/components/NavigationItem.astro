@@ -2,8 +2,8 @@
 const {name, ref, type} = Astro.props
 const pathname = Astro.url.pathname.substring(1);
 ---
-<li class="mx-2 my-1">
-  <a class={`${type === "link"  ? "text-ghost-white hover:text-copper-crayola transition duration-300 ease-in-out underline decoration-2 underline-offset-8 decoration-1 decoration-solid decoration-copper-crayola" : "no-underline p-1 flex justify-center items-center text-copper-crayola border rounded-md border-solid border-copper-crayola hover:bg-copper-crayola/25 transition duration-300 ease-in-out"}`} href={ref}>
+<li class="mx-2 last:mr-0 opacity-80 hover:opacity-100 hover:scale-110 transition duration-300 ease-in-out">
+  <a class="underline decoration-1 underline-offset-8" href={ref}>
     <span class="text-sm">{name}</span>
   </a>
 </li>
