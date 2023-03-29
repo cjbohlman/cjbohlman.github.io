@@ -1,11 +1,50 @@
 ---
-import Card from '../components/Card.astro';
----
+import LinkCard from './LinkCard.astro';
 
-<h2 class="text-2xl font-bold my-3">Education</h2>
-<a href="/christopher-bohlman-resume.pdf" class="no-underline p-1 flex justify-center items-center text-copper-crayola border rounded-md border-solid border-copper-crayola hover:bg-copper-crayola/25 transition duration-300 ease-in-out">PDF available!</a>
+const workExperience = [
+  {
+    title:"Schoolhouse Electric",
+    subtitle:"Software Engineer, April ‘22 - Present",
+    body:"Supported e-commerce side of the business. Used Shopify as the platform with a Node.js base. Developed features, fixed bugs, and worked with other business processes using Boomi."
+  },
+  {
+    title:"Fast Enterprises",
+    subtitle:"Tech Team Member, Jun ‘19 – Mar ‘22",
+    body:"Provided application support through developing in VB.NET and tuning SQL, configured application security, and co-developed OR law enforcement data interface."
+  },
+  {
+    title:"Steward Observatory",
+    subtitle:"Software Developer Intern, May ‘17 - Jun ‘19",
+    body:"Worked with MagAO-X software library in C++ and built applications for detector image analysis and monitoring system usage statics for optics systems."
+  }
+]
+
+const skills = [
+  {
+    title:"Programming Languages",
+    body:"Python, HTML/CSS, JavaScript, C/C++, Java, SQL"
+  },
+  {
+    title:"Technologies",
+    body:"Visual Studio, SQL Server, SSMS, Git, Linux, Postgres, Node.js, Boomi, Shopify Some experience in Android development, iOS development, Django, Flask, .NET stack"
+  },
+  {
+    title:"Certifications",
+    body:"n/a"
+  },
+  {
+    title:"Languages",
+    body:"English (native), Spanish (advanced), German (beginner)"
+  }
+]
+---
+<h2 class="text-3xl uppercase mb-5">Experience</h2>
+
+<a href="/christopher-bohlman-resume.pdf" class="block w-fit text-center no-underline p-1 border rounded-md border-solid transition duration-300 ease-in-out">PDF available!</a>
+
+<h3 class="text-2xl font-bold my-5">Education</h3>
 <ul role="list" class="link-card-grid">
-  <Card
+  <LinkCard
     title="BSc, Computer Science"
     subtitle="University of Arizona, '19"
     body="GPA: 3.729 (Magna Cum Laude)"
@@ -13,46 +52,15 @@ import Card from '../components/Card.astro';
   />
 </ul>
 
-<h2 class="text-2xl font-bold my-3">Work Experience</h2>
+<h3 class="text-2xl font-bold my-5">Work Experience</h3>
 <ul role="list" class="link-card-grid">
-  <Card
-    title="Schoolhouse Electric"
-    subtitle="Software Engineer, April ‘22 - Present"
-    body="Supported e-commerce side of the business. Used Shopify as the platform with a Node.js base. Developed features, fixed bugs, and worked with other business processes using Boomi."
-
-  />
-  <Card
-    title="Fast Enterprises"
-    subtitle="Tech Team Member, Jun ‘19 – Mar ‘22"
-    body="Provided application support through developing in VB.NET and tuning SQL, configured application security, and co-developed OR law enforcement data interface."
-  />
-  <Card
-    title="Steward Observatory"
-    subtitle="Software Developer Intern, May ‘17 - Jun ‘19"
-    body="Worked with MagAO-X software library in C++ and built applications for detector image analysis and monitoring system usage statics for optics systems."
-  />
+  {workExperience.map(element => <LinkCard title={element.title} subtitle={element.subtitle} body={element.body}/>)}
 </ul>
 
-<h2 class="text-2xl font-bold my-3">Skills</h2>
-  <ul role="list" class="link-card-grid">
-    <Card
-      title="Programming Languages"
-      body="Python, HTML/CSS, JavaScript, C/C++, Java, SQL"
-    />
-    <Card
-      title="Technologies"
-      body="Visual Studio, SQL Server, SSMS, Git, Linux, Postgres, Node.js, Boomi, Shopify Some experience in Android development, iOS development, Django, Flask, .NET stack"
-    />
-    <Card
-      title="Certifications"
-      body="n/a"
-    />
-    <Card
-      title="Languages"
-      body="English (native), Spanish (advanced), German (beginner)"
-    />
-  </ul>
-
+<h3 class="text-2xl font-bold my-5">Skills</h3>
+<ul role="list" class="link-card-grid">
+  {skills.map(element => <LinkCard title={element.title} body={element.body}/>)}
+</ul>
 
 <style>
 	.link-card-grid {

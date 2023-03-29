@@ -4,7 +4,7 @@ export interface Props {
   subtitle?: string;
 	body: string;
   body2?: string;
-	link: string;
+	link?: string;
 }
 
 
@@ -13,16 +13,16 @@ const { link, title, subtitle, body, body2 } = Astro.props;
 
 <li class="link-card">
 	<a href={link}>
-		<h2 class="block text-xl m-0">
+		<h2 class="block text-xl m-0 opacity-80">
 			{title}
 		</h2>
     <h3 class="block uppercase text-lg mt-1.5">
 			{subtitle}
 		</h3>
-		<p class="mt-1 mb-0">
+		<p class="mt-1 mb-0 opacity-80">
 			{body}
 		</p>
-    <p class="mt-1 mb-0">
+    <p class="mt-1 mb-0 opacity-80">
 			{body2}
 		</p>
   </a>
@@ -34,9 +34,10 @@ const { link, title, subtitle, body, body2 } = Astro.props;
 		padding: 0.15rem;
 		border-radius: 0.5rem;
 		background-position: 100%;
-		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 		box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-    color: #F5F3F5;
+    color: #d1d5db;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 300ms;
 	}
 
 	.link-card > a {
@@ -45,14 +46,14 @@ const { link, title, subtitle, body, body2 } = Astro.props;
 		line-height: 1.4;
 		padding: 1rem 1.3rem;
 		border-radius: 0.35rem;
-		background-color: #181F31;
-		opacity: 0.8;
-	}
-	h2 {
-		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		background-color: #264a5e;
 	}
 
-	.link-card:is(:hover, :focus-within) h2 {
-		color: #598392;
+	.link-card:is(:hover, :focus-within) {
+		transform: scale(1.1);
+	}
+
+  .link-card:is(:hover, :focus-within) h2 {
+		opacity: 100%;
 	}
 </style>

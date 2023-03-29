@@ -1,33 +1,37 @@
 ---
-import LinkCard from '../components/LinkCard.astro';
+import LinkCard from "./LinkCard.astro";
+
+const elements = [
+  {
+    "title": "Personal Github Repo",
+    "body": "Check out what I do!",
+    link: "https://github.com/cjbohlman",
+  },
+  {
+    link:"https://github.com/cjbohlman/eisenhower-matrix",
+    title:"Eisenhower Matrix",
+    body:"Lightweight Eisenhower matrix web app",
+  },
+  {
+    link:"https://github.com/cjbohlman/smogon_scraper",
+    title:"Smogon Scraper",
+    body:"Web scraper of Smogon data, a competitive e-sports website"
+  },
+  {
+    link:"https://github.com/cjbohlman/cjbohlman.github.io",
+    title:"Personal Website",
+    body:"Proudly made with Astro 🚀"
+  },
+  {
+    link:"https://github.com/cjbohlman/parallel-computing-problems",
+    title:"Parallel Computing Problems in C",
+    body:"Implemented various parallel computing problems with C POSIX threads"
+  }
+];
 ---
 
 <ul role="list" class="link-card-grid">
-  <LinkCard
-      title="Personal Github Repo"
-      body="Check out what I do!"
-      link="https://github.com/cjbohlman"
-    />
-  <LinkCard
-      link="https://github.com/cjbohlman/eisenhower-matrix"
-      title="Eisenhower Matrix"
-      body="Lightweight Eisenhower matrix web app"
-    />
-  <LinkCard
-    link="https://github.com/cjbohlman/smogon_scraper"
-    title="Smogon Scraper"
-    body="Web scraper of Smogon data, a competitive e-sports website"
-  />
-  <LinkCard
-    link="https://github.com/cjbohlman/cjbohlman.github.io"
-    title="Personal Website"
-    body="Proudly made with Astro"
-  />
-  <LinkCard
-    link="https://github.com/cjbohlman/parallel-computing-problems"
-    title="Parallel Computing Problems in C"
-    body="Implemented various parallel computing problems with C POSIX threads"
-  />
+  {elements.map(element => <LinkCard title={element.title} body={element.body} link={element.link} />)}
 </ul>
 
 <style>
