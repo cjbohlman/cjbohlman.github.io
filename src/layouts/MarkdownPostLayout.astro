@@ -5,7 +5,7 @@ import '../styles/post.css'
 const { frontmatter } = Astro.props;
 ---
 <Layout title={frontmatter.title}>
-  <main class="m-auto max-w-xl p-6">
+  <main class="m-auto p-6">
     <p>{frontmatter.pubDate.slice(0,10)}</p>
     <h1 class='text-3xl capitalize pb-6'>{frontmatter.description}</h1>
     <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />

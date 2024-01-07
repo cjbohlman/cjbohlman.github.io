@@ -2,9 +2,9 @@
 const {name, ref, type} = Astro.props
 const pathname = Astro.url.pathname.substring(1);
 ---
-<li class="mx-2 last:mr-0 opacity-80 hover:opacity-100 hover:scale-110 transition duration-300 ease-in-out">
-  <a class="underline decoration-1 underline-offset-8" href={ref}>
-    <span class="text-sm">{name}</span>
+<li class="flex flex-col justify-center mx-1 last:mr-0 opacity-80 hover:opacity-100 transition duration-300 ease-in-out">
+  <a class="" href={ref}>
+    <span class="tracking-tighter font-thin text-sm lg:text-lg">{name}</span>
   </a>
 </li>
 
