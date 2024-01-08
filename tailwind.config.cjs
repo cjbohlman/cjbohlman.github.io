@@ -7,7 +7,8 @@ module.exports = {
 			"midnight": '#161A30',
 			'indigo': '#31304D',
 			'storm': '#B6BBC4',
-			'desert': '#F0ECE5'
+			'desert': '#F0ECE5',
+			'red': '#BC4B51'
 		},
 		fontFamily: {
       'sans': ['Bahnschrift', 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', 'sans-serif-condensed', 'sans-serif'],

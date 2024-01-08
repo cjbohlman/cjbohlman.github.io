@@ -8,11 +8,6 @@ const elements = [
     link: "https://github.com/cjbohlman",
   },
   {
-    link:"https://github.com/cjbohlman/eisenhower-matrix",
-    title:"Eisenhower Matrix",
-    body:"Lightweight Eisenhower matrix web app",
-  },
-  {
     link:"https://github.com/cjbohlman/smogon_scraper",
     title:"Smogon Scraper",
     body:"Web scraper of Smogon data, a competitive e-sports website"
@@ -29,7 +24,7 @@ const elements = [
   }
 ];
 ---
-
+<h2 class="text-3xl mb-5 font-serif">Projects</h2>
 <ul role="list" class="link-card-grid">
   {elements.map(element => <LinkCard title={element.title} body={element.body} link={element.link} />)}
 </ul>
