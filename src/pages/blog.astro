@@ -5,7 +5,7 @@ const allPosts = await Astro.glob('../pages/posts/*.md');
 ---
 
 <Layout title="Blog">
-	<main class="m-auto max-w-xl p-6">
+	<main class="m-auto p-6">
     <ul>
       {allPosts.map((post) => <LinkCard title={post.frontmatter.title} body={post.frontmatter.description} link={post.url} />)}
     </ul>
