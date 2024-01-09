@@ -48,4 +48,4 @@ If you search for 'Is CEH worth it?', you'll encounter numerous opinions discour
 
 Nevertheless, I plan to attempt the CEH practical exam since I have a free exam voucher. Wish me luck!
 
-LLMs were used to spell-check this blog post.
+LLMs were used to spell and grammar check this blog post.
