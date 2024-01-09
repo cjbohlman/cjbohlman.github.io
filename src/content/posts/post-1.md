@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Implementing semaphores with the C threads.h library'
 pubDate: 2022-12-01
 description: 'Implenting semaphores with the C11 threads.h library'

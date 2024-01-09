@@ -1,5 +1,4 @@
 ---
-layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Certified Ethical Hacking Certification: You Should Probably Reconsider'
 pubDate: 2024-01-08
 description: 'Taking about my experience with the Certified Ethical Hacking certification from EC-Council'

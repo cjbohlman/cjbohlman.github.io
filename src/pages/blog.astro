@@ -1,13 +1,14 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from '../layouts/Layout.astro';
 import ListLinkCard from '../components/ListLinkCard.astro';
-const allPosts = await Astro.glob('../pages/posts/*.md');
-allPosts.sort((a, b) => Date.parse(b.frontmatter.pubDate) - Date.parse(a.frontmatter.pubDate));
+const allPosts = await getCollection("posts");
+allPosts.sort((a, b) => Date.parse(b.data.pubDate.toString()) - Date.parse(a.data.pubDate.toString()));
 ---
 <Layout title="Blog">
 	<main class="m-3 mb-12 lg:my-12">
     <ul class="grid grid-cols-3	">
-      {allPosts.map((post) => <ListLinkCard title={post.frontmatter.title} body={post.frontmatter.description} link={post.url} />)}
+      {allPosts.map((post) => <ListLinkCard title={post.data.title} body={post.data.description} link={`/posts/${post.slug}/`} />)}
     </ul>
 	</main>
 </Layout>

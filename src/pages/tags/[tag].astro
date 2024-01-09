@@ -1,13 +1,14 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from '../../layouts/Layout.astro';
 import LinkCard from '../../components/LinkCard.astro'
 
 export async function getStaticPaths() {
-  const allPosts = await Astro.glob('../posts/*.md');
-  const uniqueTags = [...new Set(allPosts.map((post) => post.frontmatter.tags).flat())];
+  const allPosts = await getCollection("posts");
+  const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
 
   return uniqueTags.map((tag) => {
-    const filteredPosts = allPosts.filter((post) => post.frontmatter.tags.includes(tag));
+    const filteredPosts = allPosts.filter((post) => post.data.tags.includes(tag));
     return {
       params: { tag },
       props: { posts: filteredPosts },
@@ -22,7 +23,7 @@ const { posts } = Astro.props;
   <main class="m-auto p-6">
     <p>Posts tagged with {tag}</p>
     <ul>
-      {posts.map(post => <LinkCard title={post.frontmatter.title} body={post.frontmatter.pubDate.slice(0,10)} link={post.url} />)}
+      {posts.map(post => <LinkCard title={post.data.title} body={post.data.pubDate.toString().slice(0,10)} link={`/posts/${post.slug}/`} />)}
     </ul>
   </main>
 </Layout>
