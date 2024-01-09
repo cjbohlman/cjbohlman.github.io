@@ -1,5 +1,6 @@
 ---
 import LinkCard from './LinkCard.astro';
+import ListLinkCard from './ListLinkCard.astro';
 
 const workExperience = [
   {
@@ -22,17 +23,16 @@ const workExperience = [
 const skills = [
   {
     title:"Certifications",
-    body:"Certified Ethical Hacker v12, Jan 2024"
-  },  
+    body:"Certified Ethical Hacker v12 - Jan 2024"
+  },
   {
     title:"Programming Languages",
     body:"Python, HTML/CSS + JS, C/C++, Java, SQL"
   },
   {
     title:"Technologies",
-    body:"Node.js, PostgresQL, SQL Server, Git, Linux, Shopify, Some experience in .NET stack, Django, Flask, Android development, iOS development"
+    body:"Node.js, PostgresQL, SQL Server, Git, Linux, Shopify, .NET stack"
   },
-  
   {
     title:"Languages",
     body:"English (native), Spanish (advanced), German (beginner)"
@@ -43,8 +43,8 @@ const skills = [
 
 <a href="/christopher-bohlman-resume.pdf" class="block w-fit text-center no-underline p-1 border rounded-md border-solid transition duration-300 ease-in-out">PDF available - written using LaTeX</a>
 
-<h3 class="text-2xl font-bold my-5">Education</h3>
-<ul role="list" class="link-card-grid">
+<h3 class="font-serif text-2xl font-semibold my-5">Education</h3>
+<ul role="list" class="link-card-grid grid-cols-3">
   <LinkCard
     title="BSc, Computer Science"
     subtitle="University of Arizona, '19"
@@ -53,20 +53,19 @@ const skills = [
   />
 </ul>
 
-<h3 class="text-2xl font-bold my-5">Work Experience</h3>
-<ul role="list" class="link-card-grid">
+<h3 class="font-serif text-2xl font-semibold my-5">Work Experience</h3>
+<ul role="list" class="link-card-grid grid-cols-3">
   {workExperience.map(element => <LinkCard title={element.title} subtitle={element.subtitle} body={element.body}/>)}
 </ul>
 
-<h3 class="text-2xl font-bold my-5">Skills</h3>
-<ul role="list" class="link-card-grid">
-  {skills.map(element => <LinkCard title={element.title} body={element.body}/>)}
+<h3 class="font-serif text-2xl font-semibold my-5">Skills</h3>
+<ul role="list" class="link-card-grid grid-cols-3">
+  {skills.map(element => <ListLinkCard title={element.title} body={element.body}/>)}
 </ul>
 
 <style>
 	.link-card-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
 		gap: 1rem;
 		padding: 0;
 	}

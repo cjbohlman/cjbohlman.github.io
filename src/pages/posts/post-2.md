@@ -1,13 +1,12 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: 'Certified Ethical Hacking Certification: You Probably Shouldn't'
+title: 'Certified Ethical Hacking Certification: You Should Probably Reconsider'
 pubDate: 2024-01-08
-description: 'Taking about my experience with EC-Council's Certified Ethical Hacking certification'
+description: 'Taking about my experience with the Certified Ethical Hacking certification from EC-Council'
 author: 'cjbohlman'
 image: 'https://upload.wikimedia.org/wikipedia/commons/f/ff/African_common_toad_%28Amietophrynus_gutturalis%29_swimming.jpg'
 tags: ["CEH", "cybersecurity", "hacking"]
 ---
-
 ## Background
 
 When ChatGPT started gaining traction last year, I experienced a mini-crisis and decided to partially transition into cybersecurity to protect myself against potential AI coding overlords. While I possessed coding competency, I believed that the security field would offer greater resistance against the proliferation of Large Language Models (LLMs) in software. Given my enjoyable experience with a computer security class in college, it felt like a good decision at the time.
