@@ -5,10 +5,9 @@ import '../styles/post.css'
 const { frontmatter } = Astro.props;
 ---
 <Layout title={frontmatter.title}>
-  <main class="m-auto p-6">
+  <main class="m-auto p-6 prose dark:prose-invert">
     <p>{frontmatter.pubDate.slice(0,10)}</p>
     <h1 class='text-3xl capitalize pb-6'>{frontmatter.description}</h1>
-    <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
 
     <div class="tags">
       {frontmatter.tags.map((tag: unknown) => (
@@ -22,6 +21,11 @@ const { frontmatter } = Astro.props;
 
 
 <style>
+  h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
   a {
     color: #ffffff;
   }
@@ -37,7 +41,7 @@ const { frontmatter } = Astro.props;
     border-radius: .5em;
     padding: .5em 1em;
     font-size: 1.15em;
-    background-color: #181F31;
+    border: #ffffff;
   }
 
 </style>

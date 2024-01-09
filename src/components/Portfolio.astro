@@ -1,5 +1,5 @@
 ---
-import LinkCard from "./LinkCard.astro";
+import ListLinkCard from "./ListLinkCard.astro";
 
 const elements = [
   {
@@ -24,15 +24,14 @@ const elements = [
   }
 ];
 ---
-<h2 class="text-3xl mb-5 font-serif">Projects</h2>
-<ul role="list" class="link-card-grid">
-  {elements.map(element => <LinkCard title={element.title} body={element.body} link={element.link} />)}
+<h2 class="text-serif text-3xl mb-5 font-serif">Projects</h2>
+<ul role="list" class="link-card-grid grid-cols-4">
+  {elements.map(element => <ListLinkCard title={element.title} body={element.body} link={element.link} />)}
 </ul>
 
 <style>
   .link-card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
     gap: 1rem;
     padding: 0;
   }

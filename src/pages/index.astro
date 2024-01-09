@@ -8,29 +8,20 @@ import About from '../components/About.astro';
 
 <Layout title="Chris Bohlman: Software Engineer">
 	<main class="">
-    <section id="heading" class="m-auto m-3 mb-12 lg:my-12" >
+    <section id="heading" class="m-3 mb-12 lg:my-12" >
       <Landing />
     </section>
 
-    <section id="experience" class="m-auto m-3">
+    <section id="experience" class="m-3">
       <Resume />
     </section>
 
-    <section id="projects" class="m-auto m-3 pt-28 md:pt-20">
+    <section id="projects" class="m-3 pt-28 md:pt-20">
       <Portfolio />
     </section>
 
-    <section id="contact" class="text-center m-auto m-3 mt-12 mb-20">
+    <section id="contact" class="text-center m-3 mt-12 mb-20">
       <a class="text-3xl mx-auto text-center p-3 med:p-5 text-copper-crayola border rounded-md border-solid border-copper-crayola hover:bg-copper-crayola/25 transition duration-300 ease-in-out" href="mailto:cbohlman_inquiries@protonmail.com">Want to get in touch with me?</a>
     </section>
   </main>
 </Layout>
-
-<style>
-  .link-card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-    gap: 1rem;
-    padding: 0;
-  }
-</style>
