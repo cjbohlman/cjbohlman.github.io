@@ -8,12 +8,15 @@ module.exports = {
 			'indigo': '#31304D',
 			'storm': '#B6BBC4',
 			'desert': '#F0ECE5',
-			'red': '#BC4B51'
+			'red': '#BC4B51',
+      'magnolia': '#f3eff5',
+      'rose': '#785964',
+      'slate': '#0f172a'
 		},
 		fontFamily: {
-      'sans': ['Bahnschrift', 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', 'sans-serif-condensed', 'sans-serif'],
-      'serif': ['Charter', 'Bitstream Charter', 'Sitka Text', 'Cambria', 'serif'],
-      'mono': ['ui-monospace', 'Cascadia Code', 'Source Code Pro', 'Menlo', 'Consolas', 'DejaVu Sans Mono', 'monospace'],
+      'sans': ['Mona\\ Sans', 'sans-serif'],
+      'serif': ['serif'],
+      'mono': ['ui-monospace', 'monospace'],
     },
 		screens: {
 			'xs': '475px',

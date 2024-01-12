@@ -1,0 +1,29 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const experienceArr = [
+  {
+    location: "Schoolhouse Electric",
+    dateRange: "2022 - Present",
+    title: "Software Engineer",
+    description: "Worked front-end of Shopify store using JS and reporting back-end using Python.",
+  },
+  {
+    location: "Fast Enterprises",
+    dateRange: "2019 - 2022",
+    title: "Tech Team Member",
+    description: "Provided application support through developing in VB.NET and tuning SQL, configured application security, and co-developed OR law enforcement data interface.",
+  },
+  {
+    location: "Steward Observatory",
+    dateRange: "2017 - 2019",
+    title: "Software Developer",
+    description: "Worked with MagAO-X software library in C++ and built applications for detector image analysis and monitoring system usage statics for optics systems.",
+  }
+]
+---
+<section id="experience" class="mt-12">
+  <h2 class="text-xl">Experience</h2>
+  <ul>
+    {experienceArr.map((data) => <ExperienceItem location={data.location} dateRange={data.dateRange} description={data.description} title={data.title}/>)}
+  </ul>
+</section>

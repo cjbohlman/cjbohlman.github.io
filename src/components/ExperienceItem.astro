@@ -1,0 +1,20 @@
+---
+export interface Props {
+	location: string;
+  dateRange: string;
+  title: string;
+  description?: string;
+}
+
+const { location, dateRange, description, title } = Astro.props;
+---
+<li class="flex gap-4 mt-4">
+  <div class="basis-1/2 opacity-80">
+    <p>{dateRange}</p>
+  </div>
+  <div class="basis-1/2">
+    <h3>{location}</h3>
+    <p class="opacity-60">{title}</p>
+    <p class="opacity-80 mt-4">{description}</p>
+  </div>
+</li>

@@ -1,0 +1,19 @@
+---
+import NavigationItem from "./NavigationItem.astro";
+
+const navItems = [
+  {
+    "name": "Resume",
+    "ref": "/christopher-bohlman-resume.pdf",
+  },
+  {
+    "name": "Blog",
+    "ref": "/blog",
+  }
+];
+---
+<nav>
+  <ul class="flex lg:flex-col">
+    {navItems.map((data) => <NavigationItem name={data.name} ref={data.ref}/>)}
+  </ul>
+</nav>

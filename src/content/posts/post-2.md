@@ -4,7 +4,7 @@ pubDate: 2024-01-08
 description: 'Taking about my experience with the Certified Ethical Hacking certification from EC-Council'
 author: 'cjbohlman'
 image: 'https://upload.wikimedia.org/wikipedia/commons/f/ff/African_common_toad_%28Amietophrynus_gutturalis%29_swimming.jpg'
-tags: ["CEH", "cybersecurity", "hacking"]
+tags: ["CEH", "cybersecurity", "hacking", "certification"]
 ---
 ## Background
 

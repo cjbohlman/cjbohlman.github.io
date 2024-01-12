@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from '../../layouts/Layout.astro';
-import LinkCard from '../../components/LinkCard.astro'
+import BlogPostCard from '../../components/BlogPostCard.astro'
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("posts");
@@ -20,10 +20,10 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 <Layout title={tag}>
-  <main class="m-auto p-6">
-    <p>Posts tagged with {tag}</p>
-    <ul>
-      {posts.map(post => <LinkCard title={post.data.title} body={post.data.pubDate.toString().slice(0,10)} link={`/posts/${post.slug}/`} />)}
+  <main class="mt-8 lg:mt-0">
+    <h1>Posts tagged with {tag}</h1>
+    <ul class="mt-12">
+      {posts.map((post) => <BlogPostCard title={post.data.title} description={post.data.description} link={`/posts/${post.slug}/`} date={post.data.pubDate} />)}
     </ul>
   </main>
 </Layout>
