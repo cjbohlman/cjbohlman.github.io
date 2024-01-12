@@ -7,7 +7,7 @@ allPosts.sort((a, b) => Date.parse(b.data.pubDate.toString()) - Date.parse(a.dat
 ---
 <Layout title="Blog">
   <main class="mt-8 lg:mt-0">
-    <h1 class="text-3xl">Blog Posts</h1>
+    <h1 class="text-3xl font-extrabold	">Blog Posts</h1>
     <ul class="mt-12">
       {allPosts.map((post) => <BlogPostCard title={post.data.title}
                                             description={post.data.description}

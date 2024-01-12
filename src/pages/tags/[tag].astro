@@ -21,7 +21,7 @@ const { posts } = Astro.props;
 ---
 <Layout title={tag}>
   <main class="mt-8 lg:mt-0">
-    <h1>Posts tagged with {tag}</h1>
+    <h1 class="text-3xl font-extrabold capitalize">Posts tagged with <span class="underline normal-case">{tag}</span></h1>
     <ul class="mt-12">
       {posts.map((post) => <BlogPostCard title={post.data.title} description={post.data.description} link={`/posts/${post.slug}/`} date={post.data.pubDate} />)}
     </ul>
