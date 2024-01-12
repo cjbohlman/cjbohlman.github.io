@@ -4,14 +4,10 @@ module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		colors: {
-			"midnight": '#161A30',
-			'indigo': '#31304D',
-			'storm': '#B6BBC4',
-			'desert': '#F0ECE5',
-			'red': '#BC4B51',
       'magnolia': '#f3eff5',
       'rose': '#785964',
-      'slate': '#0f172a'
+      'slate': '#0f172a',
+      'richdark': '#020617'
 		},
 		fontFamily: {
       'sans': ['Mona\\ Sans', 'sans-serif'],
