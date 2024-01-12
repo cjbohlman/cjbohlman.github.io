@@ -44,7 +44,7 @@ const skills = [
 <a href="/christopher-bohlman-resume.pdf" class="block w-fit text-center no-underline p-1 border rounded-md border-solid transition duration-300 ease-in-out">PDF available - written using LaTeX</a>
 
 <h3 class="font-serif text-2xl font-semibold my-5">Education</h3>
-<ul role="list" class="link-card-grid grid-cols-3">
+<ul role="list" class="link-card-grid grid-cols-1 lg:grid-cols-3">
   <LinkCard
     title="BSc, Computer Science"
     subtitle="University of Arizona, '19"
@@ -54,12 +54,12 @@ const skills = [
 </ul>
 
 <h3 class="font-serif text-2xl font-semibold my-5">Work Experience</h3>
-<ul role="list" class="link-card-grid grid-cols-3">
+<ul role="list" class="link-card-grid grid-cols-1 lg:grid-cols-3">
   {workExperience.map(element => <LinkCard title={element.title} subtitle={element.subtitle} body={element.body}/>)}
 </ul>
 
 <h3 class="font-serif text-2xl font-semibold my-5">Skills</h3>
-<ul role="list" class="link-card-grid grid-cols-3">
+<ul role="list" class="link-card-grid grid-cols-1 lg:grid-cols-3">
   {skills.map(element => <ListLinkCard title={element.title} body={element.body}/>)}
 </ul>
 

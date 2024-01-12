@@ -7,7 +7,7 @@ allPosts.sort((a, b) => Date.parse(b.data.pubDate.toString()) - Date.parse(a.dat
 ---
 <Layout title="Blog">
 	<main class="m-3 mb-12 lg:my-12">
-    <ul class="grid grid-cols-3	">
+    <ul class="grid grid-cols-1 lg:grid-cols-3">
       {allPosts.map((post) => <ListLinkCard title={post.data.title} body={post.data.description} link={`/posts/${post.slug}/`} />)}
     </ul>
 	</main>
