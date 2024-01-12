@@ -1,0 +1,24 @@
+---
+export interface Props {
+	title: string;
+  description: string;
+  link: string;
+}
+
+const { title,  description, link } = Astro.props;
+---
+<li class="mt-4 bg-slate rounded-md">
+  <a href={link} class="p-2 w-full flex gap-4 items-center	">
+    <span class="icon w-10 h-10 shrink-0"></span>
+    <div class="shrink">
+      <p class="text-lg">{title}</p>
+      <p class="opacity-80">{description}</p>
+    </div>
+  </a>
+</li>
+<style>
+  .icon {
+    background: rgb(110,117,168);
+    background: linear-gradient(90deg, rgba(110,117,168,1) 24%, rgba(242,149,89,1) 71%);
+  }
+</style>

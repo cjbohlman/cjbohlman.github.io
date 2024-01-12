@@ -1,0 +1,20 @@
+---
+export interface Props {
+	title: string;
+  date: Date;
+  description: string;
+  link: string;
+}
+
+const { title, date, description, link } = Astro.props;
+---
+<li class="flex gap-4 mt-4">
+  <a href={link} class="block basis-1/2 opacity-80">
+    <p>{`${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`}</p>
+
+  </a>
+  <a href={link} class="block basis-1/2">
+    <h3>{title}</h3>
+    <p class="opacity-80">{description}</p>
+  </a>
+</li>

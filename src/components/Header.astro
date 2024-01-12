@@ -1,6 +1,9 @@
 ---
-import Navigation from "./Navigation.astro";
+import NavigationBar from "./NavigationBar.astro";
 ---
-<header class="">
-  <Navigation />
+<header class="flex flex-row lg:flex-col justify-between lg:justify-start pb-3">
+  <a href="/" title="Homepage" class="text-2xl lg:mb-6">
+    <span class="font-extralight">cjb</span>
+  </a>
+  <NavigationBar />
 </header>

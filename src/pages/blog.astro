@@ -1,14 +1,18 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from '../layouts/Layout.astro';
-import ListLinkCard from '../components/ListLinkCard.astro';
+import BlogPostCard from "../components/BlogPostCard.astro";
 const allPosts = await getCollection("posts");
 allPosts.sort((a, b) => Date.parse(b.data.pubDate.toString()) - Date.parse(a.data.pubDate.toString()));
 ---
 <Layout title="Blog">
-	<main class="m-3 mb-12 lg:my-12">
-    <ul class="grid grid-cols-1 lg:grid-cols-3">
-      {allPosts.map((post) => <ListLinkCard title={post.data.title} body={post.data.description} link={`/posts/${post.slug}/`} />)}
+  <main class="mt-8 lg:mt-0">
+    <h1 class="text-3xl font-extrabold	">Blog Posts</h1>
+    <ul class="mt-12">
+      {allPosts.map((post) => <BlogPostCard title={post.data.title}
+                                            description={post.data.description}
+                                            link={`/posts/${post.slug}/`}
+                                            date={post.data.pubDate} />)}
     </ul>
 	</main>
 </Layout>

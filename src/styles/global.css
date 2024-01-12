@@ -5,3 +5,12 @@
 @layer base {
 
 }
+
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+  font-family: 'Mona Sans';
+  src: url('/fonts/Mona-Sans.woff2') format('woff2');
+  font-weight: 200 400 600 800 900;
+  font-style: normal;
+  font-display: swap;
+}

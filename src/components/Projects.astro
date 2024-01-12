@@ -1,0 +1,32 @@
+---
+import ProjectCard from "./ProjectCard.astro";
+
+const projects = [
+  {
+    title: "Personal Github Repo",
+    description: "Check out what I do!",
+    link: "https://github.com/cjbohlman",
+  },
+  {
+    link:"https://github.com/cjbohlman/smogon_scraper",
+    title:"Smogon Scraper",
+    description:"Web scraper of Smogon data, a competitive e-sports website"
+  },
+  {
+    link:"https://github.com/cjbohlman/cjbohlman.github.io",
+    title:"Personal Website",
+    description:"Proudly made with Astro 🚀"
+  },
+  {
+    link:"https://github.com/cjbohlman/parallel-computing-problems",
+    title:"Parallel Computing Problems in C",
+    description:"Implemented various parallel computing problems with C POSIX threads"
+  }
+];
+---
+<section id="projects" class="mt-12">
+  <h2 class="text-xl">Projects</h2>
+  <ul>
+    {projects.map(element => <ProjectCard title={element.title} description={element.description} link={element.link} />)}
+  </ul>
+</section>
