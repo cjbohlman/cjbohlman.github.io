@@ -12,7 +12,7 @@ const postDate = frontmatter.pubDate;
 
     <ul class="flex flex-wrap list-none px-0">
       {frontmatter.tags.map((tag: unknown) => (
-        <li class="mx-3">
+        <li class="px-3 bg-slate-700 rounded-md">
           <a class="" href={`/tags/${tag}`}>{tag}</a>
         </li>
       ))}
